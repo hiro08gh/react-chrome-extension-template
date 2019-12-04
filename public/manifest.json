@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "short_name": "react-chrome-extemsion",
+  "name": "sample",
+  "description": "sample",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://hiro08gh.com/"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistant": false
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
