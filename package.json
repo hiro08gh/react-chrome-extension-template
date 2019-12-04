@@ -17,13 +17,16 @@
     "prettier": "^1.19.1",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-extension-reloader": "^1.1.4",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "scripts": {
-    "build": "webpack --mode production --config webpack.config.js"
+    "build": "webpack --mode production --config webpack.config.js",
+    "dev": "NODE_ENV=development webpack --config webpack.dev.js --mode=development --watch"
   }
 }

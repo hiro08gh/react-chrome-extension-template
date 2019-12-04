@@ -1,7 +1,9 @@
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ExtensionReloader = require('webpack-extension-reloader');
 
 module.exports = {
   entry: {
@@ -53,6 +55,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
+    }),
+    new ExtensionReloader({
+      manifest: path.resolve(__dirname, './public/manifest.json'),
     }),
     new CopyPlugin([{from: './public/manifest.json', to: 'manifest.json'}]),
   ],
