@@ -38,6 +38,17 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      chunks: ['app'],
+    }),
+    new HtmlWebPackPlugin({
+      template: './public/background.html',
+      filename: './background.html',
+      chunks: ['background'],
+    }),
+    new HtmlWebPackPlugin({
+      template: './public/content.html',
+      filename: './content.html',
+      chunks: ['content'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
